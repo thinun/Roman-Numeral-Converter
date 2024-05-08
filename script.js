@@ -14,8 +14,27 @@ function convert() {
             userInput -= value;
         }
     }
-    return romanNumeral
+    if (userInput === '') {
+        document.getElementById('output').innerHTML = `<div class="result"><p>Please enter a number</p></div>`;
+    } else if (userInput >= 4000) {
+        document.getElementById('output').innerHTML = `<div class="result"><p>Please enter a number less than 4000</p></div>`;
+    } else if (userInput <= 0) {
+        document.getElementById('output').innerHTML = `<div class="result-m"><p>Please enter a number greater than or equal to 1</P></div>`;
+    } else {
+        document.getElementById('output').innerHTML = `<div class="result"><p>${romanNumeral}</P></div>`;
+    }
 
 }
 
-
+document.addEventListener('DOMContentLoaded', function () {
+    let buttonPress = document.getElementById('convert-btn');
+    let userInput = document.getElementById('number');
+    buttonPress.addEventListener('click', function (e) {
+        convert()
+    });
+    userInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            convert()
+        }
+    })
+});
