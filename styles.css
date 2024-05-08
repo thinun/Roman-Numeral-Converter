@@ -1,0 +1,32 @@
+body{
+    font-family: Bahnschrift, serif;
+    background-color: #332c3f;
+}
+
+
+main{
+    display: grid;
+    grid-template-rows:100px 1fr 1fr;
+    justify-items: center;
+
+}
+
+
+#top{
+
+    display: flex;
+    background-color: red;
+    font-weight: bold;
+    font-size: 35px;
+    color: white;
+}
+#middle{
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    padding-right: 100px;
+    padding-left: 100px;
+    align-items: center;
+    font-size: 25px;
+
+}
