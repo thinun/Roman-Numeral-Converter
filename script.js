@@ -1,5 +1,7 @@
 function convert() {
-    let userInput = document.getElementById('number').value;
+    let userInput = document.getElementById('number').value
+    let numberInput = parseInt(document.getElementById('number').value)
+
     const romanNumerals = {
         1000: 'M', 900: 'CM', 500: 'D', 400: 'CD', 100: 'C',
         90: 'XC', 50: 'L', 40: 'XL', 10: 'X', 9: 'IX', 5: 'V', 4: 'IV', 1: 'I'
@@ -14,16 +16,17 @@ function convert() {
             userInput -= value;
         }
     }
+
     if (userInput === '') {
-        document.getElementById('output').innerHTML = `<div class="result"><p>Please enter a number</p></div>`;
-    } else if (userInput >= 4000) {
-        document.getElementById('output').innerHTML = `<div class="result"><p>Please enter a number less than 4000</p></div>`;
-    } else if (userInput <= 0) {
+        document.getElementById('output').innerHTML = `<div class="result"><p>Please enter a valid number</p></div>`;
+    } else if (numberInput > 3999) {
+        document.getElementById('output').innerHTML = `<div class="result-m"><p>Please enter a number less than or equal to 3999</p></div>`;
+    } else if (numberInput <= 0) {
         document.getElementById('output').innerHTML = `<div class="result-m"><p>Please enter a number greater than or equal to 1</P></div>`;
     } else {
         document.getElementById('output').innerHTML = `<div class="result"><p>${romanNumeral}</P></div>`;
-    }
 
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
